@@ -13,10 +13,10 @@ module.exports = {
       avatar: Joi.string().required()
     }
   },
-  auth: {
-    mode: 'try'
-  },
+  auth: false,
   handler: function(request, reply){
-    reply();
+    User.register(request.payload, function(err, results){
+      reply().code(err ? 400 : 200);
+    });
   }
 };

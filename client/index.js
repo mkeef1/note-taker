@@ -12,5 +12,11 @@
 
       $localForageProvider.config({name:'hapi-auth', storeName:'cache', version:1.0});
     }])
-    .run(['User', function(User){}]);
+    .run(['User', '$http', '$rootScope', function(User, $http, $rootScope){
+      $http.get('/status').then(function(response){
+        $rootScope.rootuser = response.data;
+      }, function(){
+        $rootScope.rootuser = null;
+      });
+    }]);
 })();
