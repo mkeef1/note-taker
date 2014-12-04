@@ -19,7 +19,6 @@ User.login = function(obj, cb){
      return cb();
     }
 
-
     var user = results.rows[0];
     var isGood = bcrypt.compareSync(obj.password, user.password);
 
