@@ -3,11 +3,10 @@
 var Note = require('../../../models/note');
 
 module.exports = {
-  description: 'Get to Notes Page',
+  description: 'post a new note',
   handler: function(req, rep){
-
-    Note.getAll(function(err, notes){
-      rep(notes);
+    Note.addNote(req.payload, function(err, note){
+      rep();
     });
   }
 };

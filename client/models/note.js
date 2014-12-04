@@ -8,6 +8,10 @@
         return $http.get('/notes');
       }
 
-      return {showAll:showAll};
+      function addNote(note){
+        return $http.post('/notes', note);
+      }
+
+      return {showAll:showAll, addNote:addNote};
     }]);
 })();
