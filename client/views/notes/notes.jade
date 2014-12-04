@@ -30,3 +30,12 @@ table.table.table-bordered.center
         .small-6.columns
           button(ng-click='submit()') Add Note
         .small-6.columns
+
+.row
+  .small-12.columns
+    form
+      .row
+        .small-6.columns
+          label(for='tag') Tag
+          input#tag(type='text', name='tag', ng-model='tag.name')
+          button(ng-click='submitTag()') Add Tag

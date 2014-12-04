@@ -12,6 +12,10 @@
         return $http.post('/notes', note);
       }
 
-      return {showAll:showAll, addNote:addNote};
+      function addTag(tag){
+        return $http.post('/tags', tag);
+      }
+
+      return {showAll:showAll, addNote:addNote, addTag:addTag};
     }]);
 })();
