@@ -7,6 +7,7 @@
       $scope.title = 'Notes Page';
       $scope.note = {};
       $scope.tag = {};
+      $scope.notes = [];
 
       Note.showAll().then(function(response){
         //debugger;
